@@ -27,6 +27,18 @@ class MainActivity : AppCompatActivity() {
         auth = Firebase.auth
 
 
+
+        binding.card00.setOnClickListener {
+            val intent = Intent(this , addNumbersActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        binding.card01.setOnClickListener {
+            val intent = Intent(this , ListNumbersActivty::class.java)
+            startActivity(intent)
+        }
+
     }
 
 
