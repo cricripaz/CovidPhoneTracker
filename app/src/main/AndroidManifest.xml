@@ -17,7 +17,7 @@
             android:name=".ListNumbersActivty"
             android:exported="true" />
         <activity
-            android:name=".addNumbersActivity"
+            android:name=".AddNumbersActivity"
             android:exported="true" />
         <activity
             android:name=".SignUpActivity"

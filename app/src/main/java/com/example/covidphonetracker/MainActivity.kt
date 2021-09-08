@@ -3,10 +3,7 @@ package com.example.covidphonetracker
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import com.example.covidphonetracker.databinding.ActivityMainBinding
-import com.example.covidphonetracker.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -29,9 +26,10 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.card00.setOnClickListener {
-            val intent = Intent(this , addNumbersActivity::class.java)
+            val intent = Intent(this , AddNumbersActivity::class.java)
             startActivity(intent)
         }
+
 
 
         binding.card01.setOnClickListener {
