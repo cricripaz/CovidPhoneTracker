@@ -12,7 +12,6 @@ class UnionFind (n : Int ) {
         return roots[i]
     }
 
-
     fun union(x: Int, y: Int) {
         val rootX = find(x)
         val rootY = find(y)
