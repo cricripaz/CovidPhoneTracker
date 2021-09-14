@@ -37,7 +37,7 @@ class SignUpActivity : AppCompatActivity() {
 
             //Expresion Regular para contrasenia segura
 
-            val passwordRegex = Pattern.compile("^" + "(?=.*[-@#$%^&+=])"+".{6,}"+"$")
+            val passwordRegex = Pattern.compile("^" + "(?=.*[-@/#$%^&+=])"+".{6,}"+"$")
 
 
             if (mEmail.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(mEmail).matches() ){
