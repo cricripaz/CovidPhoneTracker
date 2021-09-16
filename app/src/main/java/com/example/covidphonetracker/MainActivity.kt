@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.card00.setOnClickListener {
-            val intent = Intent(this , AddNumbersActivity::class.java)
+            val intent = Intent(this , unionNumbersActivity::class.java)
             startActivity(intent)
         }
 
