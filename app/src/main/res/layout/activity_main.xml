@@ -47,16 +47,18 @@
                 android:gravity="center"
                 android:layout_gravity="center_vertical|center_horizontal"
                 >
+
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/common_google_signin_btn_icon_dark"/>
+                    android:layout_width="200px"
+                    android:layout_height="200px"
+                    android:src="@drawable/add_person" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Registro Numero"
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:text="Registrar Número"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
             </LinearLayout>
 
 
@@ -83,10 +85,11 @@
                 android:gravity="center"
                 android:layout_gravity="center_vertical|center_horizontal"
                 >
+
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/common_google_signin_btn_icon_dark"/>
+                    android:layout_width="200px"
+                    android:layout_height="200px"
+                    android:src="@drawable/covid_icon" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -120,9 +123,9 @@
                 android:layout_gravity="center_vertical|center_horizontal"
                 >
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/common_google_signin_btn_icon_dark"/>
+                    android:layout_width="200px"
+                    android:layout_height="200px"
+                    android:src="@drawable/notebook_icon"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

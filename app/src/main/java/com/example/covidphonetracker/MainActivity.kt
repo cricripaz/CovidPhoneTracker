@@ -37,6 +37,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.card10.setOnClickListener{
+            val intent = Intent(this, NotificationsActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
 

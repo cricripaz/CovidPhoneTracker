@@ -40,12 +40,12 @@
             tools:ignore="VectorDrawableCompat" />
 
         <TextView
-            android:layout_marginTop="50dp"
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:gravity="center"
-            android:text="Numeros"
+            android:text="Registrar Número"
             android:textColor="@color/black"
             android:textSize="24sp" />
     </LinearLayout>
@@ -98,7 +98,6 @@
             android:padding="16dp" />
 
 
-
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/unionButton"
             android:layout_width="wrap_content"
@@ -107,7 +106,7 @@
             android:background="@drawable/ic_buttom"
             android:paddingLeft="64dp"
             android:paddingRight="64dp"
-            android:text="Union"
+            android:text="Registrar"
             android:textColor="@color/white" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
