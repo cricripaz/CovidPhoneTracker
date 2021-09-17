@@ -1,7 +1,7 @@
 package com.example.covidphonetracker
 
 class UnionFind (n : Int ) {
-    private val roots = IntArray(n){idx -> idx}
+    val roots = IntArray(n){idx -> idx}
     private val ranks = IntArray(n){ 1 }
 
     fun find(i: Int): Int{
@@ -24,6 +24,8 @@ class UnionFind (n : Int ) {
             ++ranks[rootY]
         }
     }
+
+
 
 
 }
