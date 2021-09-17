@@ -25,7 +25,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 class NotificationsActivity : AppCompatActivity() {
 
-    private lateinit var drawer: DrawerLayout
     private lateinit var toogle: ActionBarDrawerToggle
     lateinit var recyclerViewNotificaciones: RecyclerView
     private lateinit var alertDialogMenu: AlertDialog
@@ -46,14 +45,6 @@ class NotificationsActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onBackPressed() {
-        if(drawer.isDrawerOpen(GravityCompat.START)){
-            drawer.closeDrawer(GravityCompat.START)
-        }else {
-            super.onBackPressed()
-        }
-    }
-
     inner class notificacionesRecyclerViewAdapter(val context: Context, private val list: List<Notificacion>): RecyclerView.Adapter<OptionsViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OptionsViewHolder {
@@ -68,7 +59,6 @@ class NotificationsActivity : AppCompatActivity() {
             holder.itemView.setOnClickListener {
                 Toast.makeText(this@NotificationsActivity, "nombre: ${list[position].fecha} número: ${list[position].texto} ", Toast.LENGTH_LONG).show()
             }
-//        }
         }
         override fun getItemCount() = list.size
     }
