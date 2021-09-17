@@ -18,6 +18,7 @@ class unionNumbersActivity : AppCompatActivity() {
     lateinit var editTextNumberTwo: EditText
     lateinit var mapNumbers : MutableMap<String,Int>
     lateinit var mapNumberPhone : MutableMap<Int,String>
+    lateinit var mapPhonesRegistred: MutableMap<String, Int>
     lateinit var imageView: ImageView
 
 
@@ -74,13 +75,17 @@ class unionNumbersActivity : AppCompatActivity() {
 
     fun unionNumbers(number1 : String , number2 : String){
 
+        if(mapNumbers.get(number1) == null){
+            value++
+            mapNumberPhone.set(value,number1)
+            mapNumbers.set(number1,value)
+        }
 
-        value++
-        mapNumberPhone.set(value,number1)
-        mapNumbers.set(number1,value)
-        value++
-        mapNumberPhone.set(value,number2)
-        mapNumbers.set(number2,value)
+        if(mapNumbers.get(number2) == null){
+            value++
+            mapNumberPhone.set(value,number2)
+            mapNumbers.set(number2,value)
+        }
 
 
         val n1  = mapNumbers.get(number2)
