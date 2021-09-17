@@ -8,27 +8,5 @@
     android:orientation="vertical">
 
 
-    <ListView
-        android:id="@+id/lvDatos"
-        android:layout_width="match_parent"
-        android:layout_height="305dp" />
 
-    <EditText
-        android:id="@+id/editTextPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:textAlignment="center"
-        android:hint="Numero De Telefono"
-        android:inputType="phone"
-        android:minHeight="48dp"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <Button
-        android:layout_marginTop="20dp"
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Buscar" />
 </LinearLayout>

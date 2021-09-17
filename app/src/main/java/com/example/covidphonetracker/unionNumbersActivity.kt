@@ -4,27 +4,35 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
+import android.widget.ArrayAdapter
+import android.widget.ListView
 
 
 class unionNumbersActivity : AppCompatActivity() {
 
     lateinit var buttonBackNumber : ImageView
     lateinit var buttonUnion : Button
+    lateinit var buttonFind : Button
     lateinit var editTextNumberOne: EditText
     lateinit var editTextNumberTwo: EditText
     lateinit var mapNumbers : MutableMap<String,Int>
     lateinit var mapNumberPhone : MutableMap<Int,String>
-    lateinit var mapPhonesRegistred: MutableMap<String, Int>
-    lateinit var imageView: ImageView
+
+    var listaInfectados : MutableList<String> = mutableListOf()
+    var listaIndexInfectados : MutableList<Int> = mutableListOf()
+
+
+
 
 
     var unionFindObject : UnionFind = UnionFind(100)
 
+
+
     var value = 0
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,10 +41,31 @@ class unionNumbersActivity : AppCompatActivity() {
 
         buttonBackNumber = findViewById(R.id.backImageViewAddNumbers)
         buttonUnion = findViewById(R.id.unionButton)
-        imageView = findViewById(R.id.imageView2)
+        buttonFind = findViewById(R.id.buttonFind)
+
+
+
 
         mapNumbers = mutableMapOf("0" to -1)
         mapNumberPhone = mutableMapOf(-1 to "0")
+
+
+
+        //Creando List View
+
+        val arrayAdapter: ArrayAdapter<*>
+
+        var numeros = mutableListOf("72010260","77500213","2404319008","2","8","7","6","2","ejemplo","samuel","salado")
+
+        val lvDatos = findViewById<ListView>(R.id.lvDatos)
+
+
+        arrayAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1, numeros)
+
+        lvDatos.adapter = arrayAdapter
+
+
+
 
         buttonBackNumber.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -55,18 +84,13 @@ class unionNumbersActivity : AppCompatActivity() {
 
         }
 
-        imageView.setOnClickListener{
+        buttonFind.setOnClickListener{
 
-            val arr : IntArray = unionFindObject.roots
 
-            var res : String = ""
-            for (i in arr){
-                res += " |" + arr[i]+ "|"
-            }
-
-            Log.d(" UNION ", res )
 
         }
+
+
 
 
 
@@ -96,6 +120,40 @@ class unionNumbersActivity : AppCompatActivity() {
 
         Toast.makeText(baseContext , " Union Completada " , Toast.LENGTH_SHORT).show()
 
+
+    }
+
+
+    fun findPeopleWithCovid(numberPhone : String ):MutableList<String>{
+
+
+//
+//            val valueOfNumber   = mapNumbers.get(numberPhone)
+//            val infectado : Int = unionFindObject.find(valueOfNumber)
+//
+//
+//        for (i in unionFindObject.roots){
+//
+//            if (infectado == unionFindObject.roots[i]){
+//                listaIndexInfectados.add(i)
+//            }
+//
+//        }
+
+        //{indices }
+
+        //for each add 5 -> "5232", 6 -> "fsfsf"
+
+
+
+
+
+
+
+
+
+
+        return listaInfectados
 
     }
 

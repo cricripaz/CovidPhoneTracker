@@ -2,24 +2,38 @@ package com.example.covidphonetracker
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.ListView
 
 class ListNumbersActivty : AppCompatActivity() {
-    
+
+
+    var unionNumbersActivityObject : unionNumbersActivity = unionNumbersActivity()
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_numbers_activty)
 
-        val arrayAdapter:ArrayAdapter<*>
+        //mostrar el array
 
-        var numeros = mutableListOf("72010260","77500213","2404319008","2","8","7","6","2","ejemplo","samuel","salado")
+        val arr : IntArray = unionNumbersActivityObject.unionFindArr
 
-        val lvDatos = findViewById<ListView>(R.id.lvDatos)
+        var res : String = ""
+        for (i in arr){
+            res += " |" + arr[i]+ "|"
+        }
+
+        Log.d(" UNION ", res )
 
 
-        arrayAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,numeros)
-
-        lvDatos.adapter = arrayAdapter
     }
+
+
+
+
+
 }
