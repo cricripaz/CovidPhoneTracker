@@ -4,9 +4,9 @@ class UnionFind (n : Int ) {
     val roots = IntArray(n){idx -> idx}
     private val ranks = IntArray(n){ 1 }
 
-    fun find(i: Int): Int{
-        if(roots[i] != i){
-            roots[i] = find(roots[i])
+    fun find(i: Int?): Int{
+        if(roots[i!!] != i){
+            roots[i!!] = find(roots[i])
         }
 
         return roots[i]
