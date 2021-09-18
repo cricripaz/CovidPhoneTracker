@@ -31,12 +31,6 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
-        binding.card01.setOnClickListener {
-            val intent = Intent(this , ListNumbersActivty::class.java)
-            startActivity(intent)
-        }
-
         binding.card10.setOnClickListener{
             val intent = Intent(this, NotificationsActivity::class.java)
             startActivity(intent)

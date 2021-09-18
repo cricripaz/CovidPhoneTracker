@@ -1,22 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".MainActivity">
+
 
     <TextView
         android:id="@+id/title_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_centerHorizontal="true"
         android:text="COVID Phone Tracker"
         android:textColor="@color/black"
+        android:layout_gravity="center"
         android:textStyle="bold"
         android:textSize="30sp"
         android:layout_marginTop="70dp"
         />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/all"
+        app:srcCompat="@drawable/ic_logo"
+        tools:ignore="VectorDrawableCompat" />
+
+
+
 
     <GridLayout
         android:layout_width="match_parent"
@@ -51,7 +68,7 @@
                 <ImageView
                     android:layout_width="200px"
                     android:layout_height="200px"
-                    android:src="@drawable/add_person" />
+                    android:src="@drawable/trackerlogo" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -90,7 +107,7 @@
                 <ImageView
                     android:layout_width="200px"
                     android:layout_height="200px"
-                    android:src="@drawable/notebook_icon"/>
+                    android:src="@drawable/notificationlogo"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -114,4 +131,4 @@
     </GridLayout>
 
 
-</RelativeLayout>
+</LinearLayout>
