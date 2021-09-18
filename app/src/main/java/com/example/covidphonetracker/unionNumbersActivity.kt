@@ -14,8 +14,10 @@ class unionNumbersActivity : AppCompatActivity() {
     lateinit var buttonBackNumber : ImageView
     lateinit var buttonUnion : Button
     lateinit var buttonFind : Button
+    lateinit var numeros: MutableList<String>
     lateinit var editTextNumberOne: EditText
     lateinit var editTextNumberTwo: EditText
+    lateinit var numberToSearch: EditText
     lateinit var mapNumbers : MutableMap<String,Int>
     lateinit var mapNumberPhone : MutableMap<Int,String>
 
@@ -53,16 +55,7 @@ class unionNumbersActivity : AppCompatActivity() {
 
         //Creando List View
 
-        val arrayAdapter: ArrayAdapter<*>
 
-        var numeros = mutableListOf("72010260","77500213","2404319008","2","8","7","6","2","ejemplo","samuel","salado")
-
-        val lvDatos = findViewById<ListView>(R.id.lvDatos)
-
-
-        arrayAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1, numeros)
-
-        lvDatos.adapter = arrayAdapter
 
 
 
@@ -86,14 +79,27 @@ class unionNumbersActivity : AppCompatActivity() {
 
         buttonFind.setOnClickListener{
 
+            numberToSearch = findViewById(R.id.editTextPhone)
+            var codeNumber = mapNumbers.get(numberToSearch.text.toString())
+            if(codeNumber != null) {
+                var listOfInfectedIndex: MutableList<Int> = findPeopleWithCovid(codeNumber)
+                var listOfInfected: MutableList<String> = mutableListOf()
+
+                listOfInfectedIndex.forEach() {
+                    listOfInfected.add(mapNumberPhone.get(it).toString())
+                }
+
+                val arrayAdapter: ArrayAdapter<*>
 
 
+                val lvDatos = findViewById<ListView>(R.id.lvDatos)
+
+
+                arrayAdapter = ArrayAdapter(this,android.R.layout.simple_list_item_1, listOfInfected)
+
+                lvDatos.adapter = arrayAdapter
+            }
         }
-
-
-
-
-
     }
 
 
@@ -124,9 +130,27 @@ class unionNumbersActivity : AppCompatActivity() {
     }
 
 
-    fun findPeopleWithCovid(numberPhone : String ):MutableList<String>{
-
-
+    fun findPeopleWithCovid(numberPhone: Int?):MutableList<Int>{
+        var listOfInfected: MutableList<Int> = mutableListOf()
+        var parentOfNumber = unionFindObject.find(numberPhone)
+        var number = numberPhone
+        for(i in 0..unionFindObject.roots.size-1) {
+            var index = i
+            var parent = unionFindObject.find(index)
+            while (index != parent) {
+                index = parent
+                parent = unionFindObject.find(index)
+                if (parent == numberPhone) {
+                    listOfInfected.add(i)
+                    break
+                }
+            }
+        }
+        while(number != parentOfNumber){
+            listOfInfected.add(parentOfNumber)
+            number = parentOfNumber
+            parentOfNumber = unionFindObject.find(number)
+        }
 //
 //            val valueOfNumber   = mapNumbers.get(numberPhone)
 //            val infectado : Int = unionFindObject.find(valueOfNumber)
@@ -153,7 +177,7 @@ class unionNumbersActivity : AppCompatActivity() {
 
 
 
-        return listaInfectados
+        return listOfInfected
 
     }
 
